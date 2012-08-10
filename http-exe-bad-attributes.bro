@@ -1,3 +1,5 @@
+##! http-exe-bad-attributes.bro
+##!
 ##! Detect bad executable downloaded by watching for attributes of the 
 ##! connection or request.
 ##!
@@ -50,9 +52,9 @@ event log_http(rec: HTTP::Info)
 	if ( reason != "" )
 		{
 		NOTICE([$note=Detected,
-		        $src=rec$id$orig_h,
-		        $msg=fmt("%s downloaded a Windows executable and the connection had a potentially bad %s.", rec$id$orig_h, reason),
-		        $sub=value,
-		        $identifier=cat(rec$id$orig_h,reason,value)]);
+			$src=rec$id$orig_h,
+			$msg=fmt("%s downloaded a Windows executable and the connection had a potentially bad %s.", rec$id$orig_h, reason),
+			$sub=value,
+			$identifier=cat(rec$id$orig_h,reason,value)]);
 		}
 }

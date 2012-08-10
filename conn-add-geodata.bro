@@ -1,5 +1,11 @@
+##! conn-add-geodata.bro
+##!
 ##! Add countries for the originator and responder of a connection
 ##! to the connection logs.
+##!
+##! Requirements: GeoIP database
+##!
+##! Author: Seth Hall
 
 module Conn;
 

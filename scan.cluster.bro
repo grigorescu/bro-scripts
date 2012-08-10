@@ -1,5 +1,11 @@
+##! scan.cluster.bro
+##! 
+##! Scan detector ported from Bro 1.x - with cluster support.
+##!
 ##! Adapts scan.bro to work on cluster settings. This mimics the 
 ##! default 1.5 configuration as installed by BroControl.
+##! 
+##! Authors: Many over many years.
 
 module Scan;
 

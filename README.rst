@@ -11,16 +11,17 @@ To contribute to this repository, fork this repo, and submit a pull request.
 Script List:
 -----------
 
-``roam.bro`` 
-    collects IP-to-MAC mappings of machines that may have more than one IP address over time due to a DHCP server on the network.
+``conn-add-geodata.bro``
+    Adds countries for the originator and responder of a connection to the connection logs.
 
-``mime-attachment.bro`` 
-    extracts MIME entities from a STMP session, reports suspicious email attachments, and optionally saves them to disk. 
+``http-exe-bad-attributes.bro``
+    Detects bad executable downloaded by watching for attributes of the connection or request.    
+
+``roam.bro`` 
+    Collects IP-to-MAC mappings of machines that may have more than one IP address over time due to a DHCP server on the network.
 
 ``sidejack.bro`` 
-    detects the reuse of session cookies in different contexts.
+    Detects the reuse of session cookies in different contexts.
 
 ``scan.bro`` 
-    the Bro 1.5 scan detector ported to Bro 2.0. 
-   
-    **Note**: Please read the script documentation before using.
+    The Bro 1.5 scan detector ported to Bro 2.0. For using this in a cluster, see ``scan.cluster.bro``.

@@ -1,8 +1,12 @@
+##! scan.bro
+##! 
 ##! Scan detector ported from Bro 1.x.
-##!
+##! 
 ##! This script has evolved over many years and is quite a mess right now. We
 ##! have adapted it to work with Bro 2.x, but eventually Bro 2.x will
 ##! get its own rewritten and generalized scan detector.
+##! 
+##! Authors: Many over many years.
 
 @load base/frameworks/notice/main
 
@@ -148,7 +152,7 @@ export {
 	global lowport_summary:
 		function(t: table[addr] of set[port], orig: addr): interval;
 
-	# Indexed by scanner address, yields # distinct peers scanned.
+	# Indexed by scanner address, yields distinct peers scanned.
 	# pre_distinct_peers tracks until addr_scan_trigger hosts first.
 	global pre_distinct_peers: table[addr] of set[addr]
 		&read_expire = 15 mins &redef;
