@@ -9,7 +9,7 @@ all: dist
 
 dist:
 	mkdir $(NAME)
-	cp *.bro README $(NAME)
+	cp -R scripts README $(NAME)
 	tar czf $(NAME).tar.gz $(NAME)
 	rm -r $(NAME)
 
