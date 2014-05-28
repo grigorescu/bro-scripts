@@ -32,8 +32,18 @@ export {
 
 event log_http(rec: HTTP::Info)
 	{
-	if ( ! rec?$mime_type || rec$mime_type != "application/x-dosexec" )
+	if ( ! rec?resp_fuids )
 	    return;
+
+	local dosexec = false;
+	for ( i in rec$resp_fuids )
+		{
+		if ( dosexec || rec$resp_fuids[i] == "application/x-dosexec" )
+			dosexec = true;
+		}
+
+	if ( ! dosexec )
+		return;
 	
 	local reason = "";
 	local value = "";
